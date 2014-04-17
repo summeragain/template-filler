@@ -1,0 +1,38 @@
+header {
+  display: block;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  background-color: #e3dac0;
+}
+
+content {
+  display: block;
+  padding-top: 100px;
+}
+
+.mock-data {
+  width: 200%;
+  height: 2000px;
+}
+
+.mode-selector h2 {
+  display: inline;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.mode-selector h2:first-child {
+  float: left; 
+  margin-left: 180px;
+}
+
+.mode-selector h2:last-child {
+  float: right; 
+  margin-right: 180px;
+}
+
+.mode-selector h2.selected {
+  color: darkblue;
+  border-bottom: 3px solid darkblue;
+}
