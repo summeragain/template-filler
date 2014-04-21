@@ -1,0 +1,26 @@
+{
+  "name": "template-filler",
+  "version": "0.0.0",
+  "description": "simple template filler based on node-webkit",
+  "dependencies": {},
+  "devDependencies": {
+    "karma": "~0.12.9",
+    "karma-chrome-launcher": "~0.1.3",
+    "karma-jasmine": "~0.1.5",
+    "karma-nodewebkit-launcher": "0.0.8",
+    "nodewebkit": "latest"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/karma start --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/summeragain/template-filler.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/summeragain/template-filler/issues"
+  },
+  "homepage": "https://github.com/summeragain/template-filler"
+}
