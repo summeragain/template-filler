@@ -15,7 +15,11 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'assets/js/*.js',
+      'assets/js/jquery-2.1.0.min.js',
+      'assets/js/angular.js',
+      'assets/js/bootstrap.min.js',
+      // TODO(add more files from `assets/js/`)
+
       'test/lib/angular-mocks.js',
       'test/*Spec.js'
     ],
