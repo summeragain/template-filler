@@ -21,7 +21,7 @@ module.exports = function(config) {
       // TODO(add more files from `assets/js/`)
 
       'test/lib/angular-mocks.js',
-      'test/*Spec.js'
+      'test/unit/*Spec.js'
     ],
 
 
@@ -68,6 +68,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
+    singleRun: true
   });
 };
