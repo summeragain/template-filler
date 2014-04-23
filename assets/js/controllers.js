@@ -17,5 +17,8 @@ angular.module('TemplateFillerApp.controllers', [])
   $scope.getPageUrl = function() {
     return 'pages/' + $scope.currentPage + '.html';
   }
+  $scope.currentlyOnPage = function(test) {
+    return $scope.currentPage === test;
+  }
 
 }])

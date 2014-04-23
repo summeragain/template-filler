@@ -42,22 +42,31 @@ ul.sidebar {
   left: 0px;
   top: 0px;
   bottom: 0px;
-  background-color: #ddd;
+  background-color: #3e4550;
   margin: 0;
   padding: 0;
-  width: 50px;
+  width: 55px;
 }
 
 ul.sidebar li {
-  text-align: center;
-  font-size: 16pt;
-  padding: 3px;
+  text-align: left;
+  font-size: 18pt;
+  padding: 5px;
+  padding-left: 10px;
   cursor: pointer;
+  color: #fff;
+}
+ul.sidebar li.active {
+  border-right: 5px solid #52b6ff;
+  color: #52b6ff;
+}
+ul.sidebar li:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 ul.sidebar li.spacer {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 1px;
+  margin-bottom: 1px;
   height: 1px;
   padding: 0px;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: #6c6c6c;
 }

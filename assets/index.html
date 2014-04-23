@@ -10,12 +10,12 @@
   <script src="js/controllers.js"></script>
   <script src="js/app.js"></script>
 
-  <title></title>
+  <title>Template Filler</title>
 </head>
 
 <body ng-controller="MainController">
   <ul class="sidebar">
-    <li>
+    <li ng-click="switchPage('PageLastOpened')" ng-class="{ active: currentlyOnPage('PageLastOpened') }">
       <span class="glyphicon glyphicon-folder-open"></span>
     </li>
     <li>
@@ -38,8 +38,6 @@
     </li>
   </ul>
   
-  <content ng-include="getPageUrl()">
-    <div class="mock-data">data</div>
-  </content>
+  <content ng-include="getPageUrl()"></content>
 </body>
 </html>
