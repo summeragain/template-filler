@@ -1,20 +1,27 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="TemplateFillerApp">
 <head>
   <link href="css/bootstrap-theme.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
+  
+  <script src="lib/jquery-2.1.0.min.js"></script>
+  <script src="lib/angular.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/app.js"></script>
 
   <title></title>
 </head>
 
-<body>
-  <header>
-    <div class="mode-selector">
-      <h2 class="selected">DATA</h2>
-      <h2>TEMPLATE</h2>
-    </div>
-  </header>
+<body ng-controller="mainController">
+  <ul class="sidebar">
+    <li>O</li>
+    <li>S</li>
+    <li ng-click="switchPage()">D</li>
+    <li ng-click="switchPage()">T</li>
+    <li ng-click="switchPage()">G</li>
+  </ul>
+  
   <content>
     <div class="mock-data">data</div>
   </content>
