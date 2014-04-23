@@ -1,7 +1,24 @@
-angular.module("TemplateFillerApp.controllers", [])
+angular.module('TemplateFillerApp.controllers', [])
 
-.controller("mainController", function($scope){
-  $scope.switchPage = function() {
-    alert('+');
+.controller('MainController', ['$scope', function($scope) {
+  $scope.currentPage = 'PageLastOpened';
+
+  $scope.switchPage = function(pageName) {
+    /* Available pages:
+     * - PageLastOpened
+     * - PageDataset
+     * - PageTemplate
+     * - PageResult
+     */
+
+    $scope.currentPage = pageName;
   }
-})
+
+  $scope.getPageUrl = function() {
+    return 'pages/' + $scope.currentPage + '.html';
+  }
+  $scope.currentlyOnPage = function(test) {
+    return $scope.currentPage === test;
+  }
+
+}])
