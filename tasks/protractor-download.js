@@ -27,14 +27,28 @@ module.exports = function(grunt) {
       });
   };
   
+  var linkNodeWebkit = function(callback) {
+    var dest = path.join('.selenium-assets', 'nw');
+    
+    if(fs.existsSync(dest)) {
+      return callback();
+    }
+    
+    var nwPath = path.resolve('node_modules', 'nodewebkit', 'nodewebkit', 'nw');
+    fs.symlinkSync(path.relative('.selenium-assets', nwPath), dest);
+    
+    callback();
+  };
+  
   grunt.registerTask('protractor-nw-download', 'Download Selenium and NodeWebkit chromedriver.', function() {
     var done = this.async();
     
     var config = require(path.resolve(process.cwd(), 'protractor.conf.js')).config;      
     
-    async.parallel([
+    async.series([
       downloadChromedriver.bind(null, config),
-      downloadSelenium.bind(null, config)
+      downloadSelenium.bind(null, config),
+      linkNodeWebkit
     ],
     function(err) {
       done(err);

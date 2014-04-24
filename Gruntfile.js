@@ -26,7 +26,7 @@ module.exports = function(grunt) {
   
   grunt.config.set('protractor', {
     options: {
-      //configFile: path.resolve('node_modules', 'grunt-protractor-runner', 'node_modules', 'protractor', 'referenceConf.js'), // Default config file
+      configFile: path.resolve('node_modules', 'grunt-protractor-runner', 'node_modules', 'protractor', 'referenceConf.js'), // Default config file
       keepAlive: false, // If false, the grunt process stops when the test fails.
       noColor: false, // If true, protractor will not use colors in its output.
     },
@@ -34,11 +34,9 @@ module.exports = function(grunt) {
     nw: {
       options: {
         configFile: path.resolve('protractor.conf.js'),
-
-        args: {        
-          specs: [
-            'test/unit/*Spec.js'
-          ],
+        
+        args: {
+          specs: [ 'test/unit/*Spec.js' ],
           verbose: true
         }
       }
