@@ -9,6 +9,7 @@
   <script src="lib/angular.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
 
   <title>Template Filler</title>
 </head>
@@ -17,24 +18,29 @@
   <ul class="sidebar">
     <li ng-click="switchPage('PageLastOpened')" ng-class="{ active: currentlyOnPage('PageLastOpened') }">
       <span class="glyphicon glyphicon-folder-open"></span>
+      <div class="description">Open</div>
     </li>
     <li>
       <span class="glyphicon glyphicon-floppy-disk"></span>
+      <div class="description">Save</div>
     </li>
 
     <li class="spacer"></li>
 
     <li ng-click="switchPage('PageDataset')" ng-class="{ active: currentlyOnPage('PageDataset') }">
       <span class="glyphicon glyphicon-list-alt"></span>
+      <div class="description">Data</div>
     </li>
     <li ng-click="switchPage('PageTemplate')" ng-class="{ active: currentlyOnPage('PageTemplate') }">
       <span class="glyphicon glyphicon-eye-open"></span>
+      <div class="description">Template</div>
     </li>
 
     <li class="spacer"></li>
 
     <li ng-click="switchPage('PageResult')" ng-class="{ active: currentlyOnPage('PageResult') }">
       <span class="glyphicon glyphicon-print"></span>
+      <div class="description">Print</div>
     </li>
   </ul>
   

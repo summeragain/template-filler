@@ -8,33 +8,12 @@ header {
 
 content {
   display: block;
-  margin-left: 60px;
+  margin-left: 80px;
 }
 
 .mock-data {
   width: 200%;
   height: 2000px;
-}
-
-.mode-selector h2 {
-  display: inline;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.mode-selector h2:first-child {
-  float: left; 
-  margin-left: 180px;
-}
-
-.mode-selector h2:last-child {
-  float: right; 
-  margin-right: 180px;
-}
-
-.mode-selector h2.selected {
-  color: darkblue;
-  border-bottom: 3px solid darkblue;
 }
 
 ul.sidebar {
@@ -45,23 +24,24 @@ ul.sidebar {
   background-color: #3e4550;
   margin: 0;
   padding: 0;
-  width: 55px;
+  width: 75px;
 }
 
 ul.sidebar li {
-  text-align: left;
+  text-align: center;
   font-size: 18pt;
   padding: 5px;
-  padding-left: 10px;
   cursor: pointer;
   color: #fff;
+  border-right: 5px solid transparent;
+  text-shadow: 1px 1px 1px #000;
 }
 ul.sidebar li.active {
-  border-right: 5px solid #52b6ff;
+  border-right-color: #52b6ff;
   color: #52b6ff;
 }
 ul.sidebar li:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 ul.sidebar li.spacer {
   margin-top: 1px;
@@ -69,4 +49,8 @@ ul.sidebar li.spacer {
   height: 1px;
   padding: 0px;
   background-color: #6c6c6c;
+}
+
+ul.sidebar li .description {
+  font-size: 10pt;
 }

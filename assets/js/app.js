@@ -1,3 +1,4 @@
 angular.module('TemplateFillerApp', [
-  'TemplateFillerApp.controllers'
+  'TemplateFillerApp.controllers',
+  'TemplateFillerApp.services'
 ]);

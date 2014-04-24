@@ -22,3 +22,9 @@ angular.module('TemplateFillerApp.controllers', [])
   }
 
 }])
+
+.controller('LastOpenedController', ['$scope', 'OpenFile', function($scope, OpenFile) {
+  $scope.openFile = function() {
+    OpenFile();
+  }
+}])
