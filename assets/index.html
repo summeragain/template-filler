@@ -16,7 +16,7 @@
 
 <body ng-controller="MainController">
   <ul class="sidebar">
-    <li ng-click="switchPage('PageLastOpened')" ng-class="{ active: currentlyOnPage('PageLastOpened') }">
+    <li ng-click="switchPage('PageLastOpened')" ng-class="{ active: currentlyOnPage('PageLastOpened') }" class="switcher">
       <span class="glyphicon glyphicon-folder-open"></span>
       <div class="description">Open</div>
     </li>
@@ -27,18 +27,18 @@
 
     <li class="spacer"></li>
 
-    <li ng-click="switchPage('PageDataset')" ng-class="{ active: currentlyOnPage('PageDataset') }">
+    <li ng-click="switchPage('PageDataset')" ng-class="{ active: currentlyOnPage('PageDataset') }" class="switcher">
       <span class="glyphicon glyphicon-list-alt"></span>
       <div class="description">Data</div>
     </li>
-    <li ng-click="switchPage('PageTemplate')" ng-class="{ active: currentlyOnPage('PageTemplate') }">
+    <li ng-click="switchPage('PageTemplate')" ng-class="{ active: currentlyOnPage('PageTemplate') }" class="switcher">
       <span class="glyphicon glyphicon-eye-open"></span>
       <div class="description">Template</div>
     </li>
 
     <li class="spacer"></li>
 
-    <li ng-click="switchPage('PageResult')" ng-class="{ active: currentlyOnPage('PageResult') }">
+    <li ng-click="switchPage('PagePrint')" ng-class="{ active: currentlyOnPage('PagePrint') }" class="switcher">
       <span class="glyphicon glyphicon-print"></span>
       <div class="description">Print</div>
     </li>

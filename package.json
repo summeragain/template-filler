@@ -29,5 +29,7 @@
   "bugs": {
     "url": "https://github.com/summeragain/template-filler/issues"
   },
-  "homepage": "https://github.com/summeragain/template-filler"
+  "homepage": "https://github.com/summeragain/template-filler",
+  
+  "main": "assets/index.html"
 }

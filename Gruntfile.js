@@ -21,6 +21,15 @@ module.exports = function(grunt) {
           appName: 'xdg-open'
         }
       }
+    },
+    test: {
+      options: {
+        keepalive: false,
+        base: 'assets',
+
+        port: 3002,
+        hostname: 'localhost'
+      }
     }
   });
   
@@ -36,7 +45,8 @@ module.exports = function(grunt) {
         configFile: path.resolve('protractor.conf.js'),
         
         args: {
-          specs: [ 'test/unit/*Spec.js' ],
+          baseUrl: 'http://localhost:3002/',
+          specs: [ 'test/e2e/*Spec.js' ],
           verbose: true
         }
       }
@@ -49,6 +59,6 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', [ 'connect:debug' ]);
-  grunt.registerTask('test', [ 'protractor-nw-config', 'protractor-nw-download', 'protractor' ]); 
+  grunt.registerTask('test', [ 'connect:test', 'protractor-nw-config', 'protractor-nw-download', 'protractor' ]); 
   
 };
