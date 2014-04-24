@@ -1,16 +1,35 @@
 var download = require('download'),
     fs       = require('fs'),
     async    = require('async'),
-    path     = require('path');
+    path     = require('path'),
+    progress = require('multimeter')(process);
 
 module.exports = function(grunt) {
   
   var downloadSelenium = function(config, callback) {
     if(fs.existsSync(config.seleniumServerJar)) {
+      grunt.log.ok('Selenium server already downloaded.');
       return callback();
     }
     
+    var total, got = 0,
+        bar = progress({ before: 'selenium jar [' });
+    
     download(config.seleniumServerJarUrl, '.selenium-assets')
+      .on('response', function(res) {
+        total = parseInt(res.headers['content-length']);
+      })
+      .on('data', function(data) {
+        got += data.length;
+        
+        var percent = got / total * 100;
+        bar.percent(percent);
+
+        if (percent >= 100) {
+          process.stdout.write('\n');
+          callback();
+        }
+      })
       .on('error', function(err) {
         callback(new Error('Selenium status: ' + err))
       });
@@ -18,13 +37,32 @@ module.exports = function(grunt) {
   
   var downloadChromedriver = function(config, callback) {
     if(fs.existsSync(config.chromeDriver)) {
+      grunt.log.ok('NodeWebkit chromedriver already downloaded.');
       return callback();
     }
     
+    var total, got = 0,
+        bar = progress({ before: 'chromedriver [' });
+    
     download(config.chromeDriverUrl, '.selenium-assets', { extract: true, strip: 1 })
+      .on('response', function(res) {
+        total = parseInt(res.headers['content-length']);
+      })
+      .on('data', function(data) {
+        got += data.length;
+        
+        var percent = got / total * 100;
+        bar.percent(percent);
+
+        if (percent >= 100) {
+          process.stdout.write('\n');
+          grunt.log.ok('Extracting...');
+          callback();
+        }
+      })
       .on('error', function(err) {
         callback(new Error('Chromedriver status: ' + err));
-      });
+      })
   };
   
   var linkNodeWebkit = function(callback) {

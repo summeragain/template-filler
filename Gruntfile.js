@@ -8,20 +8,6 @@ module.exports = function(grunt) {
   });
 
   grunt.config.set('connect', {
-    debug: {
-      options: {
-        keepalive: true,
-        base: 'assets',
-
-        port: 3001,
-        hostname: 'localhost',
-
-        open: {
-          target: 'http://localhost:<%= connect.debug.options.port%>',
-          appName: 'xdg-open'
-        }
-      }
-    },
     test: {
       options: {
         keepalive: false,
@@ -58,7 +44,7 @@ module.exports = function(grunt) {
   grunt.loadTasks('tasks');
 
   // Default task(s).
-  grunt.registerTask('default', [ 'connect:debug' ]);
+  grunt.registerTask('default', [ 'nodewebkit' ]);
   grunt.registerTask('test', [ 'connect:test', 'protractor-nw-config', 'protractor-nw-download', 'protractor' ]); 
   
 };
