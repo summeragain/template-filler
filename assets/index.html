@@ -24,16 +24,16 @@
 
     <li class="spacer"></li>
 
-    <li ng-click="switchPage('PageDataset')">
+    <li ng-click="switchPage('PageDataset')" ng-class="{ active: currentlyOnPage('PageDataset') }">
       <span class="glyphicon glyphicon-list-alt"></span>
     </li>
-    <li ng-click="switchPage('PageTemplate')">
+    <li ng-click="switchPage('PageTemplate')" ng-class="{ active: currentlyOnPage('PageTemplate') }">
       <span class="glyphicon glyphicon-eye-open"></span>
     </li>
 
     <li class="spacer"></li>
 
-    <li ng-click="switchPage('PageResult')">
+    <li ng-click="switchPage('PageResult')" ng-class="{ active: currentlyOnPage('PageResult') }">
       <span class="glyphicon glyphicon-print"></span>
     </li>
   </ul>
