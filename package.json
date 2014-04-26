@@ -20,7 +20,7 @@
     "multimeter": "^0.1.1"
   },
   "scripts": {
-    "test": "node_modules/.bin/karma start"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
