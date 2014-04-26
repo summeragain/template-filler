@@ -8,7 +8,8 @@ header {
 
 content {
   display: block;
-  margin-left: 80px;
+  margin-left: 75px;
+  padding: 5px;
 }
 
 .mock-data {
@@ -30,7 +31,7 @@ ul.sidebar {
 ul.sidebar li {
   text-align: center;
   font-size: 18pt;
-  padding: 5px;
+  padding: 7px 5px;
   cursor: pointer;
   color: #fff;
   border-right: 5px solid transparent;

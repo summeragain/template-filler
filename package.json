@@ -10,7 +10,14 @@
     "karma-nodewebkit-launcher": "0.0.8",
     "karma-cli": "0.0.4",
     "grunt": "^0.4.4",
-    "grunt-contrib-connect": "^0.7.1"
+    "grunt-contrib-connect": "^0.7.1",
+    "grunt-protractor-runner": "^0.2.4",
+    "npm": "^1.4.7",
+    "semver": "^2.2.1",
+    "async": "^0.7.0",
+    "download": "^0.1.16",
+    "chokidar": "~0.8.2",
+    "multimeter": "^0.1.1"
   },
   "scripts": {
     "test": "node_modules/.bin/karma start"
@@ -24,5 +31,6 @@
   "bugs": {
     "url": "https://github.com/summeragain/template-filler/issues"
   },
-  "homepage": "https://github.com/summeragain/template-filler"
+  "homepage": "https://github.com/summeragain/template-filler",
+  "main": "assets/index.html"
 }
