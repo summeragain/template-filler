@@ -28,3 +28,12 @@ angular.module('TemplateFillerApp.controllers', [])
     OpenFile();
   }
 }])
+
+.controller('DatasetController', ['$scope', function($scope) {
+}])
+
+.controller('PrintController', ['$scope', function($scope) {
+}])
+
+.controller('TemplateController', ['$scope', function($scope) {
+}])
