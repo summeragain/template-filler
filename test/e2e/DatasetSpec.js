@@ -3,7 +3,7 @@ var utils = require('./utils.js');
 describe('Dataset editor', function() {
 
   it('should present on "Data" subpage', function() {
-    browser.get('index.html');
+    browser.get('');
 
     utils
       .switchSubpage('data')
@@ -26,7 +26,7 @@ describe('Dataset editor', function() {
   })
 
   it('should be clear at begining', function() {
-    browser.get('index.html');
+    browser.get('');
 
     var dataset;
 
@@ -51,7 +51,7 @@ describe('Dataset editor', function() {
   })
 
   it('should be able to add a row', function() {
-    browser.get('index.html');
+    browser.get('');
 
     var newRow;
 
@@ -78,7 +78,7 @@ describe('Dataset editor', function() {
   })
 
   it('should be able to add a column', function() {
-    browser.get('index.html');
+    browser.get('');
 
     var newColumn;
 

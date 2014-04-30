@@ -2,7 +2,7 @@ var utils = require('./utils.js');
 
 describe('Main page', function() {
   it('should have buttons for switching subpage', function() {
-    browser.get('index.html');
+    browser.get('');
 
     element.all(by.css('ul.sidebar li[ng-click].switcher'))
       .then(function(elems) {
@@ -11,7 +11,7 @@ describe('Main page', function() {
   })
   
   it('should by default be on "Open" subpage', function() {
-    browser.get('index.html');
+    browser.get('');
 
     var subpage = element(by.css('body content > div'));
     subpage.getAttribute('ng-controller')
@@ -21,7 +21,7 @@ describe('Main page', function() {
   })
   
   it('should change subpage to "Data"', function() {
-    browser.get('index.html');
+    browser.get('');
 
     utils
       .switchSubpage('data')
@@ -34,7 +34,7 @@ describe('Main page', function() {
   })
   
   it('should change subpage to "Template" subpage', function() {
-    browser.get('index.html');
+    browser.get('');
 
     utils
       .switchSubpage('template')
@@ -47,7 +47,7 @@ describe('Main page', function() {
   })
   
   it('should change subpage to "Print" subpage', function() {
-    browser.get('index.html');
+    browser.get('');
 
     utils
       .switchSubpage('print')
@@ -60,7 +60,7 @@ describe('Main page', function() {
   })
   
   it('can change subpages one-by-one', function() {
-    browser.get('index.html');
+    browser.get('');
     
     utils
       .switchSubpage('data')
