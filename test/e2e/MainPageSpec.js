@@ -1,3 +1,5 @@
+var utils = require('./utils.js');
+
 describe('Main page', function() {
   it('should have buttons for switching subpage', function() {
     browser.get('index.html');
@@ -21,9 +23,9 @@ describe('Main page', function() {
   it('should change subpage to "Data"', function() {
     browser.get('index.html');
 
-    element.all(by.css('ul.sidebar li[ng-click].switcher'))
-      .then(function(elems) {
-        elems[1].click();
+    utils
+      .switchSubpage('data')
+      .then(function() {
         return element(by.css('body content > div')).getAttribute('ng-controller');
       })
       .then(function(controller) {
@@ -34,9 +36,9 @@ describe('Main page', function() {
   it('should change subpage to "Template" subpage', function() {
     browser.get('index.html');
 
-    element.all(by.css('ul.sidebar li[ng-click].switcher'))
-      .then(function(elems) {
-        elems[2].click();
+    utils
+      .switchSubpage('template')
+      .then(function() {
         return element(by.css('body content > div')).getAttribute('ng-controller');
       })
       .then(function(controller) {
@@ -47,9 +49,9 @@ describe('Main page', function() {
   it('should change subpage to "Print" subpage', function() {
     browser.get('index.html');
 
-    element.all(by.css('ul.sidebar li[ng-click].switcher'))
-      .then(function(elems) {
-        elems[3].click();
+    utils
+      .switchSubpage('print')
+      .then(function() {
         return element(by.css('body content > div')).getAttribute('ng-controller');
       })
       .then(function(controller) {
@@ -59,32 +61,31 @@ describe('Main page', function() {
   
   it('can change subpages one-by-one', function() {
     browser.get('index.html');
-
-    var elems;
     
-    element.all(by.css('ul.sidebar li[ng-click].switcher'))
-      .then(function(found) {
-        elems = found;
-        
-        elems[1].click();
+    utils
+      .switchSubpage('data')
+      .then(function() {
         return element(by.css('body content > div')).getAttribute('ng-controller');
       })
       .then(function(controller) {
         expect(controller).toBe('DatasetController');
-        
-        elems[2].click();
+        return utils.switchSubpage('template');
+      })
+      .then(function() {
         return element(by.css('body content > div')).getAttribute('ng-controller');
       })
       .then(function(controller) {
         expect(controller).toBe('TemplateController');
-        
-        elems[3].click();
+        return utils.switchSubpage('print');
+      })
+      .then(function() {
         return element(by.css('body content > div')).getAttribute('ng-controller');
       })
       .then(function(controller) {
         expect(controller).toBe('PrintController');
-        
-        elems[0].click();
+        return utils.switchSubpage('open');
+      })
+      .then(function() {
         return element(by.css('body content > div')).getAttribute('ng-controller');
       })
       .then(function(controller) {
