@@ -1,0 +1,17 @@
+<table class='dataset-table'>
+  <thead>
+    <th ng-repeat="item in header">{{ item }}</th>
+    <th class="new-column">...</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="line in data">
+      <td ng-repeat="name in header">
+        {{ getField(line, name) }}
+      </td>
+    </tr>
+    
+    <tr class="new-row">
+      <td ng-repeat="name in header"></td>
+    </tr>
+  </tbody>
+</table>

@@ -55,3 +55,16 @@ ul.sidebar li.spacer {
 ul.sidebar li .description {
   font-size: 10pt;
 }
+
+.dataset-table th, .dataset-table td {
+  border: 1px solid black;
+  padding: 3px;
+}
+
+.dataset-table .new-row {
+  height: 25px;
+}
+.dataset-table .new-column {
+  min-width: 35px;
+  text-align: center;
+}
