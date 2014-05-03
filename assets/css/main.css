@@ -57,12 +57,21 @@ ul.sidebar li .description {
 }
 
 .dataset-table th, .dataset-table td {
-  border: 1px solid black;
+  border: 1px solid rgba(50, 50, 50, 0.5);
+  border-collapse: collapse;
   padding: 3px;
+  min-width: 35px;
+}
+.dataset-table .unused-cell {
+  border: 1px solid rgba(50, 50, 50, 0.2);
 }
 
-.dataset-table .new-row {
-  height: 25px;
+.dataset-table tr td {
+  min-height: 25px;
+}
+.dataset-table .new-row td {
+  cursor: pointer;
+  text-align: center;
 }
 .dataset-table .new-column {
   min-width: 35px;
