@@ -1,18 +1,15 @@
 angular.module('TemplateFillerApp.directives', [])
 
-.directive('datasetEditor', [function() {
+.directive('datasetEditor', ['CurrentData', function(CurrentData) {
   return {
     restrict: 'EA',
     templateUrl: 'partials/DatasetEditor.html',
     
     link: function($scope) {
-      $scope.header = [ 'FieldColumn'];
-      $scope.data = [
-        { 'FieldColumn': 'value' },
-      ];
+      $scope.data = CurrentData;
       
       $scope.getField = function(data, name) {
-        return data[name] === undefined ? ' ' : data[name];
+        return data[name] === undefined ? ' hgh' : data[name];
       }
 
       $scope.fieldEdited = function(index, newValue) {

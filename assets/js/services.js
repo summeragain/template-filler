@@ -9,3 +9,16 @@ angular.module('TemplateFillerApp.services', [])
   
   input.trigger('click');
 })
+
+.service('CurrentData', [function() {
+  var header = [ 'FieldColumn' ];
+  var data = [ { 'FieldColumn': 'value' } ];
+  
+  this.getRows = function() {
+    return data;
+  }
+  
+  this.getColumns = function() {
+    return header;
+  }
+}]);

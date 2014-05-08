@@ -2,14 +2,14 @@
 
   <thead>
     <th editable="fieldEdited($index, $value)" 
-        placeholder="item" ng-repeat="item in header" ng-bind="item" class="header-column"></th>
+        placeholder="item" ng-repeat="item in data.getColumns()" ng-bind="item" class="header-column"></th>
 
     <th editable="fieldCreated($value)"
         static-placeholder="..." class="new-column unused-cell"></th>
   </thead>
 
   <tbody>
-    <tr ng-repeat="line in data" class="data-row">
+    <tr ng-repeat="line in data.getRows()" class="data-row">
       <td editable="dataUpdated(line, name, $value)"
           ng-repeat="name in header" placeholder="" ng-bind="getField(line, name)"></td>
 
