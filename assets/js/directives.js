@@ -9,7 +9,7 @@ angular.module('TemplateFillerApp.directives', [])
       $scope.data = CurrentData;
 
       $scope.getField = function(data, name) {
-        return data[name] === undefined ? ' hgh' : data[name];
+        return data[name] === undefined ? '' : data[name];
       }
 
       $scope.fieldEdited = function(index, newValue) {
@@ -19,7 +19,7 @@ angular.module('TemplateFillerApp.directives', [])
           return;
         }
 
-        if($scope.header.indexOf(newValue) !== -1) {
+        if($scope.data.getColumns().indexOf(newValue) !== -1) {
           // TODO: log error
           console.log('duplicated field: ', newValue);
           return;
@@ -27,7 +27,7 @@ angular.module('TemplateFillerApp.directives', [])
 
         console.log('field updated. was:', oldValue, 'now:', newValue);
 
-        $scope.data.forEach(function(element) {
+        $scope.data.getRows().forEach(function(element) {
           var oldData = element[oldValue];
 
           if(oldData !== undefined) {
@@ -36,14 +36,14 @@ angular.module('TemplateFillerApp.directives', [])
           }
         });
 
-        $scope.header[index] = newValue;
+        $scope.data.getColumns()[index] = newValue;
       }
       $scope.fieldCreated = function(newValue) {
         if(newValue === '') {
           return '...';
         }
 
-        if($scope.header.indexOf(newValue) !== -1) {
+        if($scope.data.getColumns().indexOf(newValue) !== -1) {
           // TODO: log error
           console.log('duplicated field: ', newValue);
           return;
@@ -51,7 +51,7 @@ angular.module('TemplateFillerApp.directives', [])
 
         console.log('field created:', newValue);
 
-        $scope.header.push(newValue);
+        $scope.data.getColumns().push(newValue);
         return '';
       }
       $scope.dataUpdated = function(item, name, value) {
@@ -59,7 +59,7 @@ angular.module('TemplateFillerApp.directives', [])
       }
 
       $scope.createRow = function() {
-        $scope.data.push({ });
+        $scope.data.getRows().push({ });
       }
     }
   };

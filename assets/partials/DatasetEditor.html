@@ -1,7 +1,7 @@
 <table class='dataset-table'>
 
   <thead>
-    <th editable="fieldEdited($index, $value)" 
+    <th editable="fieldEdited($index, $value)"
         placeholder="item" ng-repeat="item in data.getColumns()" ng-bind="item" class="header-column"></th>
 
     <th editable="fieldCreated($value)"
@@ -11,13 +11,13 @@
   <tbody>
     <tr ng-repeat="line in data.getRows()" class="data-row">
       <td editable="dataUpdated(line, name, $value)"
-          ng-repeat="name in header" placeholder="" ng-bind="getField(line, name)"></td>
+          ng-repeat="name in data.getColumns()" placeholder="" ng-bind="getField(line, name)"></td>
 
       <td class="unused-cell"></td>
     </tr>
-    
+
     <tr class="new-row">
-      <td colspan="{{header.length}}" class="unused-cell" ng-click="createRow()">...</td>
+      <td colspan="{{data.getColumns().length}}" class="unused-cell" ng-click="createRow()">...</td>
     </tr>
   </tbody>
 
