@@ -7,9 +7,15 @@ header {
 }
 
 content {
-  display: block;
+  display: flex;
   margin-left: 75px;
   padding: 5px;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  align-items: stretch;
 }
 
 .mock-data {
@@ -80,4 +86,18 @@ ul.sidebar li .description {
 
 .dataset-table thead th {
   text-align: center;
+}
+
+*[ng-controller="TemplateController"] {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.CodeMirror {
+  height: 100% !important; /* VERY UGLY HACK */
+}
+.CodeMirror-scroll {
+  height: 95% !important; /* VERY UGLY HACK */
 }

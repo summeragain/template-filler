@@ -36,4 +36,5 @@ angular.module('TemplateFillerApp.controllers', [])
 }])
 
 .controller('TemplateController', ['$scope', function($scope) {
+  $scope.templateContents = '#Markdown template contents';
 }])
