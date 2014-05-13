@@ -4,10 +4,10 @@ angular.module('TemplateFillerApp.directives', [])
   return {
     restrict: 'EA',
     templateUrl: 'partials/DatasetEditor.html',
-    
+
     link: function($scope) {
       $scope.data = CurrentData;
-      
+
       $scope.getField = function(data, name) {
         return data[name] === undefined ? ' hgh' : data[name];
       }
@@ -110,7 +110,7 @@ angular.module('TemplateFillerApp.directives', [])
 
       elem
         .attr('contenteditable', true)
-        
+
         .on('blur', function(event) {
           updateBlur(event);
         })
@@ -136,6 +136,34 @@ angular.module('TemplateFillerApp.directives', [])
           }
 
         });
+    }
+  };
+}])
+
+.directive('markdownEditor', ['$timeout', function($timeout) {
+  return {
+    restrict: 'C',
+    require: 'ngModel',
+
+    link: function($scope, element, attr, ngModel) {
+      var editor = new Editor({
+        element: element[0]
+      });
+      editor.render();
+
+      editor.codemirror.on('change', function(instance) {
+        var newValue = instance.getValue();
+        if (newValue !== ngModel.$viewValue) {
+          $timeout(function() {
+            ngModel.$setViewValue(newValue);
+          });
+        }
+      });
+
+      ngModel.$render = function () {
+        var safeViewValue = ngModel.$viewValue || '';
+        editor.codemirror.setValue(safeViewValue);
+      };
     }
   };
 }])
