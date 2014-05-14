@@ -35,6 +35,6 @@ angular.module('TemplateFillerApp.controllers', [])
 .controller('PrintController', ['$scope', function($scope) {
 }])
 
-.controller('TemplateController', ['$scope', function($scope) {
-  $scope.templateContents = '#Markdown template contents';
+.controller('TemplateController', ['$scope', 'CurrentTemplate', function($scope, CurrentTemplate) {
+  $scope.templateContents = CurrentTemplate.getMarkdown();
 }])

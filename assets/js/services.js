@@ -21,4 +21,17 @@ angular.module('TemplateFillerApp.services', [])
   this.getColumns = function() {
     return header;
   }
-}]);
+}])
+
+.service('CurrentTemplate', [function() { 
+  var text = '#title';
+  
+  this.getMarkdown = function() {
+    return text;
+  }
+  
+  this.setMarkdown = function(str) {
+    text = str;
+  }
+
+}])
