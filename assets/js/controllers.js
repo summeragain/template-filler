@@ -1,7 +1,7 @@
 angular.module('TemplateFillerApp.controllers', [])
 
 .controller('MainController', ['$scope', function($scope) {
-  $scope.currentPage = 'PagePrint';
+  $scope.currentPage = 'PageLastOpened';
 
   $scope.switchPage = function(pageName) {
     /* Available pages:

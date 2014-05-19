@@ -22,7 +22,7 @@ angular.module('TemplateFillerApp.services', [])
 
 .service('CurrentData', [function() {
   var header = [ 'FieldColumn' ];
-  var data = [ { 'FieldColumn': 'value' }, { 'FieldColumn': 'value2' } ];
+  var data = [ { 'FieldColumn': 'value' } ];
 
   this.getRows = function() {
     return data;
