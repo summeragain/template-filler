@@ -1,3 +1,7 @@
-<div  ng-controller="PrintController">
-  <div>result</div>
+<div ng-controller="PrintController">
+  <button class="btn btn-primary print-btn">Print!</button>
+
+  <div class="print-page" ng-repeat="page in pages">
+    <div fill template="template" context="page"></div>
+  </div>
 </div>

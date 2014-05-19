@@ -10,9 +10,19 @@ angular.module('TemplateFillerApp.services', [])
   input.trigger('click');
 })
 
+.constant('SaveFile', function(callback) {
+  var input = $('<input nwsaveas="result.pdf" type="file">');
+
+  input.on('change', function(e) {
+    callback(e.target.value);
+  });
+
+  input.trigger('click');
+})
+
 .service('CurrentData', [function() {
   var header = [ 'FieldColumn' ];
-  var data = [ { 'FieldColumn': 'value' } ];
+  var data = [ { 'FieldColumn': 'value' }, { 'FieldColumn': 'value2' } ];
 
   this.getRows = function() {
     return data;
@@ -23,13 +33,13 @@ angular.module('TemplateFillerApp.services', [])
   }
 }])
 
-.service('CurrentTemplate', [function() { 
-  var text = '#title';
-  
+.service('CurrentTemplate', [function() {
+  var text = '#example page\n{{ FieldColumn }}';
+
   this.getMarkdown = function() {
     return text;
   }
-  
+
   this.setMarkdown = function(str) {
     text = str;
   }

@@ -94,10 +94,34 @@ ul.sidebar li .description {
   display: flex;
   flex-direction: column;
 }
+*[ng-controller="PrintController"] {
+  width: 100%;
+}
 
 .CodeMirror {
   height: 100% !important; /* VERY UGLY HACK */
 }
 .CodeMirror-scroll {
   height: 95% !important; /* VERY UGLY HACK */
+}
+
+@media screen {
+
+  .print-page {
+    width: 210mm;
+    height: 297mm;
+    margin: 0px auto;
+    border: 1px solid rgba(0, 0, 0, 0.22);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+    overflow: hidden;
+
+    padding: 15mm 10mm;
+  }
+  .print-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
+
 }
