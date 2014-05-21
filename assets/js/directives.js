@@ -167,3 +167,75 @@ angular.module('TemplateFillerApp.directives', [])
     }
   };
 }])
+
+.directive('fill', ['$compile', function($compile) {
+  return {
+    restrict: 'A',
+    scope: {
+      template: '=',
+      context:  '='
+    },
+
+    link: function($scope, element) {
+      var html = $scope.template
+          .replace(/\{\{ */g, '{{context.')
+          .replace(/ *\}\}/g, '}}');
+
+      var contents = $compile($(html))($scope);
+      element.append(contents);
+    }
+  };
+}])
+
+.directive('printBtn', ['SaveFile', function(SaveFile) {
+  var pdf  = require('html-pdf'),
+      fs   = require('fs'),
+      path = require('path');
+
+  var save = function(element, filePath) {
+    var siblings = element.parent().children('div'),
+        html = '', header, footer,
+        options;
+
+    siblings.each(function(i, elem) {
+      html += elem.outerHTML;
+    });
+
+    var url = function(value) {
+      return path.resolve('assets', 'css', value);
+    }
+
+    header = '<style>';
+    header += fs.readFileSync(url('bootstrap.min.css'));
+    header += fs.readFileSync(url('print.css'));
+    header += '</style>'
+    header += '<body>'
+
+    footer = '</body>';
+
+    options = {
+      width: '210mm',
+      height: '297mm',
+    };
+
+    pdf.create(header + html + footer, options, function(err, buffer) {
+      if(err) {
+        return console.error(err);
+      }
+
+      fs.writeFileSync(filePath, buffer);
+    });
+  }
+
+  return {
+    restrict: 'C',
+
+    link: function($scope, element) {
+      element.click(function() {
+        SaveFile(function(path) {
+          save(element, path);
+        })
+      })
+    }
+  };
+}])

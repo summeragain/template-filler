@@ -18,7 +18,8 @@
     "async": "^0.7.0",
     "download": "^0.1.16",
     "chokidar": "~0.8.2",
-    "multimeter": "^0.1.1"
+    "multimeter": "^0.1.1",
+    "html-pdf": "^0.1.2"
   },
   "scripts": {
     "test": "node_modules/.bin/grunt test"
@@ -26,6 +27,9 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/summeragain/template-filler.git"
+  },
+  "window": {
+    "min_width": 930
   },
   "author": "",
   "license": "MIT",

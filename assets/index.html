@@ -51,15 +51,4 @@
   <content ng-include="getPageUrl()"></content>
 </body>
 
-<!-- DEBUG -->
-<script>
-  var watcher = require('chokidar').watch('.');
-
-  watcher.on('change', function(event, path) {
-    watcher.close();
-    window.location.reload();
-  });
-</script>
-<!-- /DEBUG -->
-
 </html>
