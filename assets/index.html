@@ -13,16 +13,32 @@
   <title></title>
 </head>
 
-<body ng-controller="mainController">
+<body ng-controller="MainController">
   <ul class="sidebar">
-    <li>O</li>
-    <li>S</li>
-    <li ng-click="switchPage()">D</li>
-    <li ng-click="switchPage()">T</li>
-    <li ng-click="switchPage()">G</li>
+    <li>
+      <span class="glyphicon glyphicon-folder-open"></span>
+    </li>
+    <li>
+      <span class="glyphicon glyphicon-floppy-disk"></span>
+    </li>
+
+    <li class="spacer"></li>
+
+    <li ng-click="switchPage('PageDataset')">
+      <span class="glyphicon glyphicon-list-alt"></span>
+    </li>
+    <li ng-click="switchPage('PageTemplate')">
+      <span class="glyphicon glyphicon-eye-open"></span>
+    </li>
+
+    <li class="spacer"></li>
+
+    <li ng-click="switchPage('PageResult')">
+      <span class="glyphicon glyphicon-print"></span>
+    </li>
   </ul>
   
-  <content>
+  <content ng-include="getPageUrl()">
     <div class="mock-data">data</div>
   </content>
 </body>

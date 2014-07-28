@@ -1,1 +1,3 @@
-angular.module('TemplateFillerApp', ['TemplateFillerApp.controllers']);
+angular.module('TemplateFillerApp', [
+  'TemplateFillerApp.controllers'
+]);

@@ -8,7 +8,7 @@ header {
 
 content {
   display: block;
-  margin-left: 40px;
+  margin-left: 60px;
 }
 
 .mock-data {
@@ -42,8 +42,22 @@ ul.sidebar {
   left: 0px;
   top: 0px;
   bottom: 0px;
-  background-color: grey;
+  background-color: #ddd;
   margin: 0;
   padding: 0;
-  width: 30px;
+  width: 50px;
+}
+
+ul.sidebar li {
+  text-align: center;
+  font-size: 16pt;
+  padding: 3px;
+  cursor: pointer;
+}
+ul.sidebar li.spacer {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 1px;
+  padding: 0px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
